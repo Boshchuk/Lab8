@@ -14,13 +14,14 @@ namespace Lab8
         {
             Console.Clear();
 
+            //verh
             for (int i = 0; i < SizeX; i++)
             {
                 Console.Write("*");
             }
             Console.WriteLine();
 
-
+            // bok i seredina be veha i niza
             for (int i = 0; i < SizeY-2; i++)
             {
                 Console.Write("*");
@@ -31,17 +32,11 @@ namespace Lab8
                 Console.WriteLine("*");
 
             }
-
+            // niz
             for (int i = 0; i < SizeX; i++)
             {
                 Console.Write("*");
             }
-
-
-            //drow border
-
-
-
         }
     }
 }
