@@ -25,5 +25,5 @@ public:
 
 	static void GoToxy(short x, short y);
 	void MoveBall();
-	void Draw();
+	void Draw() const;
 };

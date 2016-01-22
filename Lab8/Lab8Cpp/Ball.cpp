@@ -36,39 +36,42 @@ void Ball::MoveBall()
 	LastY = PosY;
 	PosX = PosX + VelX;
 	PosY = PosY + VelY;
+	
+
 	if (PosX >= ClientWidth - 2)
 	{
+		PosX = ClientWidth - 2;
 		VelX = -VelX;
 	}
 
 	if (PosX <= 1)
 	{
+		PosX = 1;
 		VelX = -VelX;
 	}
 
 	if (PosY >= ClientHeight - 2)
 	{
+		PosY = ClientHeight - 2;
 		VelY = -VelY;
 	}
 
 	if (PosY <= 1)
 	{
+		PosY = 1;
 		VelY = -VelY;
 	}
+	
 }
 
 
 
-void Ball::Draw()
+void Ball::Draw() const
 {
-	//var lastColor = Console.ForegroundColor;
-
-	//Console.ForegroundColor = ConsoleColor.Red;
 
 	GoToxy(LastX, LastY);
 	std::cout << " ";
 	GoToxy(PosX, PosY);
 	std::cout << "o";
 
-	//Console.ForegroundColor = lastColor;
 }

@@ -22,12 +22,16 @@ int main()
 
 	while (xDir == 0 || yDir == 0)
 	{
-		xDir = -1 + rand() % 1;
-		yDir = -1 + rand() % 1;
+		xDir = (-1 + rand() % 1) * rand() % 3;
+		yDir = (-1 + rand() % 1) *rand() % 3;
 	}
 
+	auto posx =1+ rand() % (sizeX-1);
+	auto posy =1+ rand() % (sizeY-1);
+
+
 	Pool pool = Pool(sizeX,	sizeY);
-	Ball ball = Ball(2, 2, xDir, yDir, sizeX, sizeY);
+	Ball ball = Ball(posx, posy, xDir, yDir, sizeX, sizeY);
 	
 	pool.Draw();
 	while (true)
