@@ -8,10 +8,13 @@
 
 
 
-Ball::Ball(int posX, int posY, int velX, int velY, int clientWidth, int clientHeight)
+Ball::Ball(int radius, int posX, int posY, int velX, int velY, int clientWidth, int clientHeight)
 {
+	Radius = radius;
+
 	ClientHeight = clientHeight;
 	ClientWidth = clientWidth;
+
 	PosX = posX;
 	PosY = posY;
 	VelX = velX;
@@ -23,7 +26,7 @@ Ball::Ball(int posX, int posY, int velX, int velY, int clientWidth, int clientHe
 
 void Ball::GoToxy(short x, short y)
 {
-	COORD coord;// = COORD({ x, y };
+	COORD coord;
 	coord.X = x;
 	coord.Y = y;
 
@@ -38,33 +41,31 @@ void Ball::MoveBall()
 	PosY = PosY + VelY;
 	
 
-	if (PosX >= ClientWidth - 2)
+	if (PosX + Radius >= ClientWidth - 2)
 	{
-		PosX = ClientWidth - 2;
+		PosX = ClientWidth - 2 - Radius;
 		VelX = -VelX;
 	}
 
-	if (PosX <= 1)
+	if (PosX -Radius <= 1)
 	{
-		PosX = 1;
+		PosX = 1 +Radius;
 		VelX = -VelX;
 	}
 
-	if (PosY >= ClientHeight - 2)
+	if (PosY +Radius >= ClientHeight - 2)
 	{
-		PosY = ClientHeight - 2;
+		PosY = ClientHeight - 2 - Radius;
 		VelY = -VelY;
 	}
 
-	if (PosY <= 1)
+	if (PosY -Radius <= 1)
 	{
-		PosY = 1;
+		PosY = 1 +Radius;
 		VelY = -VelY;
 	}
 	
 }
-
-
 
 void Ball::Draw() const
 {

@@ -2,9 +2,12 @@
 
 class Ball
 {
-public:
+private:
 	int LastX;
 	int LastY;
+public:
+
+	int Radius;
 
 	int PosX;
 
@@ -18,7 +21,7 @@ public:
 	int ClientHeight;
 
 public:
-	Ball(int posX, int posY, int velX, int velY, int clientWidth, int clientHeight);
+	Ball(int radius, int posX, int posY, int velX, int velY, int clientWidth, int clientHeight);
 
 public:
 	
